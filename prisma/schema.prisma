@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/*
+  Shopping Task
+  ===============
+  Represents one user shopping intent
+  Example: "Buy a laptop under $800"
+*/
+model ShoppingTask {
+  id             String   @id @default(uuid())
+  userQuery      String
+  item           String
+  budget         Int
+  preferredBrand String?
+  status         String   // SEARCHING | PRICE_DROP_FOUND
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  products       FoundProduct[]
+  emails         EmailLog[]
+}
+
+/*
+  Found Products
+  ===============
+  Results from Web Search agent
+*/
+model FoundProduct {
+  id          String   @id @default(uuid())
+  taskId      String
+  name        String
+  price       Int
+  link        String
+  isBestMatch Boolean
+  lastChecked DateTime
+
+  task        ShoppingTask @relation(fields: [taskId], references: [id])
+  prices      PriceHistory[]
+}
+
+/*
+  User Memory
+  ============
+  Long-term preferences memory
+*/
+model UserMemory {
+  id    String @id @default(uuid())
+  key   String
+  value String
+}
+
+/*
+  Email Log
+  =========
+  Gmail tool history
+*/
+model EmailLog {
+  id      String   @id @default(uuid())
+  taskId  String
+  subject String
+  sentAt  DateTime @default(now())
+
+  task    ShoppingTask @relation(fields: [taskId], references: [id])
+}
+
+/*
+  Price History
+  ==============
+  Tracks price changes for alerts
+*/
+model PriceHistory {
+  id        String   @id @default(uuid())
+  productId String
+  oldPrice  Int
+  newPrice  Int
+  checkedAt DateTime @default(now())
+
+  product   FoundProduct @relation(fields: [productId], references: [id])
+}

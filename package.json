@@ -1,22 +1,36 @@
 {
-  "name": "shopping-assistant",
-  "version": "1.0.0",
-  "description": "Get started by customizing your environment (defined in the .idx/dev.nix file) with the tools and IDE extensions you'll need for your project!",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@langchain/community": "^1.1.4",
-    "@langchain/core": "^1.1.15",
-    "@langchain/google-genai": "^2.1.10",
-    "@langchain/langgraph": "^1.1.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^5.2.1",
-    "googleapis": "^170.1.0"
-  }
-}
+        "name": "shopping-assistant",
+        "version": "1.0.0",
+        "description": "Get started by customizing your environment (defined in the .idx/dev.nix file) with the tools and IDE extensions you'll need for your project!",
+        "main": "index.js",
+        "type": "module",
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "keywords": [],
+        "author": "",
+        "license": "ISC",
+        "dependencies": {
+          "@langchain/community": "^1.1.4",
+          "@langchain/core": "^1.1.15",
+          "@langchain/google-genai": "^2.1.10",
+          "langchain": "^0.2.11",
+          "@langchain/langgraph": "^1.1.0",
+          "@prisma/adapter-pg": "^7.2.0",
+          "@prisma/client": "^7.2.0",
+          "cors": "^2.8.5",
+          "dotenv": "^16.6.1",
+          "express": "^5.2.1",
+          "googleapis": "^170.1.0",
+          "pg": "^8.17.1"
+        },
+        "devDependencies": {
+          "@types/cors": "^2.8.19",
+          "@types/express": "^5.0.6",
+          "@types/node": "^25.0.9",
+          "@types/pg": "^8.16.0",
+          "prisma": "^7.2.0",
+          "ts-node": "^10.9.2",
+          "typescript": "^5.9.3"
+        }
+      }
