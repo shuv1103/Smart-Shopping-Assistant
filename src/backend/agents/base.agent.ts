@@ -1,4 +1,4 @@
-import { ToolCallCache } from "../redis/tool_cache";
+import { ToolCallCache } from "../redis/tool_cache.js";
 
 export abstract class BaseAgent {
     private toolCallCache: ToolCallCache<any>;

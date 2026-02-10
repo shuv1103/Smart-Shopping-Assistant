@@ -1,7 +1,7 @@
-import { ApiResponse } from "../utils/ApiResponse";
-import { WebSearchAgent } from "../agents/websearch.agent";
-import { ProductSearchInput } from "../tools/websearch/websearch.types";
-import { asyncHandler } from "../utils/asyncHandler";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { WebSearchAgent } from "../agents/websearch.agent.js";
+import { ProductSearchInput } from "../tools/websearch/websearch.types.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 const webSearchAgent = new WebSearchAgent();
 
