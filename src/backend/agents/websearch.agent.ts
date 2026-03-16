@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
-import { ToolCallCache } from "../redis/tool_cache";
-import { WebSearchTool } from "../tools/websearch/websearch.tool";
-import { ProductSearchInput, WebSearchResult } from "../tools/websearch/websearch.types";
+import { ToolCallCache } from "../redis/tool_cache.js";
+import { WebSearchTool } from "../tools/websearch/websearch.tool.js";
+import { ProductSearchInput, WebSearchResult } from "../tools/websearch/websearch.types.js";
 
 const DEFAULT_MAX_RESULTS = 5;
 const MAX_ALLOWED_RESULTS = 20;

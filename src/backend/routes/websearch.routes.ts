@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { webSearchController } from "../controllers/websearch.controller";
+import { webSearchController } from "../controllers/websearch.controller.js";
 
 const webSearchRouter = Router();
 

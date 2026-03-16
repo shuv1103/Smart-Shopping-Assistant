@@ -1,6 +1,6 @@
-import { tavilyClient } from "./tavilyClient";
-import { ProductSearchInput, ProductResult, WebSearchResult } from "./websearch.types";
-import { extractProductName, extractPrice } from "./websearch.helpers";
+import { getTavilyClient } from "./tavilyClient.js";
+import { ProductSearchInput, ProductResult, WebSearchResult } from "./websearch.types.js";
+import { extractProductName, extractPrice } from "./websearch.helpers.js";
 
 export class WebSearchTool
 {
@@ -8,6 +8,7 @@ export class WebSearchTool
     {
         const {question, maxResults} = input;
 
+        const tavilyClient = getTavilyClient()
         const response = await tavilyClient.search(question,{
             maxResults: maxResults,
             searchDepth: "advanced"

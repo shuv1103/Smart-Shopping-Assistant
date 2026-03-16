@@ -1,9 +1,9 @@
-import express from "express";
+import express, {Application} from "express"
 import cors from "cors";
-import { ApiResponse } from "./utils/ApiResponse";
-import { webSearchRouter } from "./routes/websearch.routes";
+import { ApiResponse } from "./utils/ApiResponse.js";
+import { webSearchRouter } from "./routes/websearch.routes.js";
 
-const app = express();
+const app:Application = express();
 
 app.use(
     cors({
